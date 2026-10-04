@@ -1,0 +1,39 @@
+Statement of Work (SoW–GW-B)
+(Mock Contract: National Science Foundation / LIGO Scientific Collaboration)
+
+ Statement of Work
+Contracting Organization: National Science Foundation (NSF), LIGO Scientific Collaboration
+Contractor: Academic Parallel Computing Laboratory (ADVCS Program)
+Project Title: Statistical Characterization of Transient Gravitational Wave Events
+Contract ID: NSF-LIGO-EDU-24-B
+
+1. Objective
+The NSF seeks a software system to analyze gravitational wave strain data in order to characterize and categorize transient events, including both astrophysical signals and noise artifacts.
+The goal is not detection alone, but population-level understanding of observed transients.
+
+2. Scope of Work
+The contractor shall:
+Scan GW strain datasets for transient features
+Compute simplified statistical descriptors for each candidate window
+Map feature signatures into known transient categories
+Aggregate results to reveal distribution trends
+Identify and rank the most statistically significant events
+
+3. Required Data Structures
+The contractor shall implement and utilize:
+A custom hash table for feature signature indexing
+A tree-based structure to represent transient classification hierarchies
+A heap-based priority queue for ranking significant transients
+All teams shall use the same ADT interfaces to ensure comparability.
+
+4. Deliverables
+gw_results.csv – hierarchical transient classification
+gw_topk.csv – highest-significance events
+Parallel-safe, deterministic outputs
+
+5. Success Criteria
+Accurate aggregation of transient populations
+Consistent classification across distributed runs
+Clear, structured output suitable for downstream analysis
+
+

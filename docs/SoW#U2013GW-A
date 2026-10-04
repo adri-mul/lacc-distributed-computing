@@ -1,0 +1,39 @@
+Statement of Work (SoW–GW-A)
+(Mock Contract: NASA Goddard Space Flight Center)
+
+ Statement of Work
+Contracting Organization: NASA Goddard Space Flight Center (GSFC)
+Contractor: Academic Parallel Computing Laboratory (ADVCS Program)
+Project Title: Automated Classification of Compact Binary Coalescence Candidates
+Contract ID: GSFC-GW-EDU-24-A
+
+1. Objective
+NASA GSFC seeks an automated software pipeline capable of scanning gravitational wave strain data to identify and classify compact binary coalescence (CBC) candidate events.
+The contractor shall develop a parallel analysis tool that processes time-series strain data and produces a structured classification of candidate detections.
+
+2. Scope of Work
+The contractor shall:
+Process GW strain datasets conforming to the GW Input Contract
+Extract discrete feature signatures using sliding window techniques
+Map extracted signatures against a provided reference catalog
+Aggregate detections into a hierarchical classification tree
+Produce ranked Top-K candidate events
+
+3. Required Data Structures
+The contractor shall implement and utilize:
+A custom hash table for feature-to-template mapping
+A tree-based aggregation structure for signal classification
+A heap-based priority queue for Top-K event selection
+Use of standard library equivalents is prohibited where custom ADTs are specified.
+
+4. Deliverables
+gw_results.csv – hierarchical classification output
+gw_topk.csv – Top-K strongest candidate events
+Fully deterministic output reproducible across parallel runs
+
+5. Success Criteria
+Correct classification of synthetic CBC signals
+Efficient scaling across MPI ranks
+Deterministic, contract-compliant output
+
+

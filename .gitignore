@@ -1,0 +1,26 @@
+# Build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+cmake_install.cmake
+Testing/
+_deps/
+
+# Compiled objects/binaries
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+
+# Editor/OS junk
+.DS_Store
+.vscode/
+.idea/
+build/
+tmp_test_*
+*.zip
+

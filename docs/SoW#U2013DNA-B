@@ -1,0 +1,56 @@
+Statement of Work (SoW–DNA-B)
+Comparative Environmental DNA Enrichment Analysis
+Issuing Organization:
+ National Oceanic and Atmospheric Administration (NOAA)
+Office of Coastal Monitoring & Assessment
+Performing Organization:
+Academic Computing Laboratory
+(ADVCS Parallel Computing Program)
+Contract Reference:
+NOAA-CMA-DNA-2026-B
+
+1. Background & Mission Context
+NOAA conducts long-term environmental monitoring to detect changes in microbial ecosystems that may indicate pollution events, climate impact, or ecological disruption.
+Rather than absolute abundance, NOAA requires comparative analysis between two environmental samples collected under different conditions.
+The agency seeks a computational solution capable of identifying taxa that are enriched or depleted between samples.
+
+2. Scope of Work
+The contractor shall analyze two FASTQ datasets, designated Sample A and Sample B, and compute differential enrichment metrics across a shared biological taxonomy.
+Both datasets follow identical collection and sequencing protocols.
+The application must conform to the LACC DNA Input Contract.
+
+3. Technical Requirements
+The contractor shall:
+Ingest two independent FASTQ datasets.
+Extract k-mers from each dataset using identical parameters.
+Maintain separate k-mer counts using custom hash tables.
+Compute enrichment scores per k-mer (difference or ratio).
+Map k-mers to taxonomic leaf nodes.
+Aggregate enrichment scores through the taxonomy tree.
+Report enriched and depleted taxa.
+Parallel execution using MPI + OpenMP is mandatory.
+
+4. Required Data Structures
+The solution must utilize the same ADTs as other LACC DNA analyses:
+Feature Mapper: Custom hash table
+Result Aggregator: Taxonomy tree
+Top-K Selection: Heap-based priority queue
+No additional or alternative data structures are permitted for scoring.
+
+5. Deliverables
+Executable comparative DNA analysis application
+Hierarchical enrichment report
+Top-K most enriched taxa
+Clear documentation of enrichment metric used
+
+6. Acceptance Criteria
+The solution will be accepted if:
+Enrichment calculations are consistent and reproducible
+Aggregation correctly propagates values upward
+Both datasets are treated symmetrically
+Output format conforms to contract
+
+7. Educational Alignment (Non-Contractual)
+This work supports training in comparative analytics, distributed workloads, and algorithmic fairness in scientific computing.
+
+

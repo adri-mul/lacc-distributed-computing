@@ -1,0 +1,56 @@
+Statement of Work (SoW–DNA-A)
+Environmental Microbial Abundance Assessment
+Issuing Organization:
+ U.S. Environmental Protection Agency (EPA)
+Office of Water – Computational Monitoring Division
+Performing Organization:
+Academic Computing Laboratory
+(ADVCS Parallel Computing Program)
+Contract Reference:
+EPA-ENV-DNA-2026-A
+
+1. Background & Purpose
+The U.S. Environmental Protection Agency (EPA) is conducting a pilot study to assess the baseline microbial composition of environmental water samples collected from a local watershed.
+Recent advances in low-cost sequencing enable rapid environmental surveillance; however, scalable computational pipelines are required to process large volumes of sequencing data efficiently.
+The EPA seeks a contractor to develop a parallel, reproducible DNA analysis application capable of producing a hierarchical abundance profile from raw sequencing reads.
+
+2. Scope of Work
+The contractor shall analyze a single environmental DNA dataset provided in FASTQ format and produce a structured report describing the relative abundance of detected taxa.
+The application shall operate on a distributed computing cluster and must conform to the LACC DNA Input Contract.
+
+3. Technical Requirements
+The contractor shall:
+Ingest one FASTQ dataset from shared storage.
+Extract k-mers using a sliding window approach.
+Maintain k-mer frequency counts using a custom hash table.
+Map k-mers to known organisms using a provided reference.
+Aggregate results through a hierarchical taxonomy tree.
+Produce a deterministic abundance report.
+Parallel execution using MPI (inter-node) and OpenMP (intra-node) is required.
+
+4. Required Data Structures
+The solution must utilize:
+Feature Mapper: Custom hash table (collision handling required)
+Result Aggregator: Tree structure representing biological taxonomy
+Top-K Selection: Heap-based priority queue
+No external bioinformatics libraries may be used.
+
+5. Deliverables
+Executable DNA analysis application
+Hierarchical abundance report
+Top-K most abundant taxa
+Documentation describing algorithmic choices
+
+6. Acceptance Criteria
+The solution will be accepted if:
+Output is deterministic across runs
+Taxonomic aggregation is correct
+Performance scales with increased parallel resources
+Input contract is strictly followed
+
+7. Educational Alignment (Non-Contractual)
+This engagement supports workforce development in parallel computing, data structures, and applied scientific software engineering.
+
+
+
+
